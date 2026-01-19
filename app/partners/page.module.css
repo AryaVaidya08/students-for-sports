@@ -137,7 +137,7 @@
   align-items: center;
   gap: 4rem;
   transform: translateX(-33.333%);
-  animation: scrollRight 30s linear infinite;
+  animation: scrollRight 15s linear infinite;
   will-change: transform;
 }
 
@@ -170,7 +170,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 150px;
+  width: 50px;
   z-index: 2;
   pointer-events: none;
 }
@@ -354,7 +354,7 @@
 
   .fadeLeft,
   .fadeRight {
-    width: 80px;
+    width: 25px;
   }
 
   .ctaSection {
