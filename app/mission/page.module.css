@@ -59,27 +59,60 @@
   font-family: var(--font-primary);
 }
 
-/* Mission Section */
-.mission {
-  position: relative;
-  padding: 8rem 2rem;
+/* Content Section */
+.content {
+  padding: 0;
   background: var(--color-white);
-  overflow: hidden;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.missionContent {
+.section {
+  margin-bottom: 0;
+  padding: 5rem 0;
+  width: 100%;
+}
+
+.section:nth-of-type(1) {
+  background-color: var(--color-white);
+}
+
+.section:nth-of-type(2) {
+  background-color: var(--color-gray-light);
+}
+
+.methodologySection {
+  background-color: var(--color-white);
+  padding: 5rem 0;
+  margin-top: 0;
+  width: 100%;
+}
+
+.methodologySection .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sectionContent {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: start;
 }
 
-.missionLeftColumn {
+.sectionContentReversed .sectionImage {
+  grid-column: 1;
+}
+
+.sectionContentReversed .sectionLeftColumn {
+  grid-column: 2;
+}
+
+.sectionLeftColumn {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -89,24 +122,26 @@
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   margin: 0;
-  text-align: center;
   color: var(--color-accent);
   letter-spacing: -0.01em;
+  font-family: var(--font-primary);
+  text-align: center;
 }
 
-.missionText {
+.textContent {
   font-size: 1.125rem;
   line-height: 1.8;
   color: var(--color-text-dark);
-  text-align: center;
   font-weight: 400;
+  font-family: var(--font-primary);
+  text-align: center;
 }
 
-.missionText p {
+.textContent p {
   margin: 0;
 }
 
-.missionImage {
+.sectionImage {
   width: 100%;
   height: 100%;
   min-height: 300px;
@@ -118,8 +153,47 @@
   align-self: stretch;
 }
 
-.missionImage:hover {
+.sectionImage:hover {
   box-shadow: 0 25px 70px rgba(41, 82, 107, 0.3);
+}
+
+
+.methodologySection .sectionTitle {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.methodologySteps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.methodologyStep {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-dark);
+  font-weight: 400;
+  font-family: var(--font-primary);
+  flex: 1;
+  min-width: 200px;
+}
+
+.methodologyNumber {
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-right: 0.5rem;
+}
+
+.methodologyArrow {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  flex-shrink: 0;
 }
 
 /* Fade Up Animation */
@@ -143,48 +217,54 @@
   transform: none !important;
 }
 
-/* Staggered delays for child elements */
-.missionContent .fadeUp:nth-child(1) {
-  transition-delay: 0.1s;
-}
-
-.missionContent .fadeUp:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
 @media (max-width: 768px) {
+  .sectionContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .sectionTitle {
+    text-align: center;
+  }
+
+  .textContent {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .sectionImage {
+    min-height: 250px;
+  }
+
   .hero {
     padding: 6rem 1.5rem;
     min-height: 40vh;
   }
 
-  .heroTitle {
-    font-size: 2.5rem;
+  .container {
+    padding: 0 1.5rem;
   }
 
-  .heroSubtitle {
-    font-size: 1.125rem;
+  .section {
+    padding: 4rem 0;
+    margin-bottom: 0;
   }
 
-  .missionContent {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  .methodologySection {
+    padding: 4rem 0;
+    margin-top: 0;
   }
 
-  .missionLeftColumn {
-    gap: 1.5rem;
+  .methodologySteps {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .missionImage {
-    min-height: 250px;
+  .methodologyArrow {
+    transform: rotate(90deg);
   }
 
-  .mission {
-    padding: 4rem 1.5rem;
-  }
-
-  .sectionTitle {
-    font-size: 2rem;
-    margin-bottom: 3rem;
+  .methodologyStep {
+    text-align: center;
   }
 }

@@ -1,0 +1,189 @@
+/* Contact Stats Section */
+.contact {
+  position: relative;
+  padding: 4rem 2rem;
+  background: var(--color-gray-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contactContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.statsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.contactTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-accent);
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  min-width: fit-content;
+}
+
+.statNumber {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-primary-highlight);
+  line-height: 1;
+  min-width: 5ch;
+  display: inline-block;
+  text-align: center;
+}
+
+.statLabel {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: var(--color-text-dark);
+  font-weight: 400;
+}
+
+.buttonColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contactButton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 2.5rem;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  border-radius: 12px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(41, 82, 107, 0.2);
+}
+
+.contactButton:hover {
+  background-color: #1f3f4f;
+  box-shadow: 0 6px 20px rgba(41, 82, 107, 0.4);
+}
+
+.buttonIcon {
+  font-size: 1.125rem;
+  transition: transform 0.3s ease;
+}
+
+
+@media (max-width: 968px) {
+  .contactContent {
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  
+  .statsColumn {
+    width: 100%;
+    align-items: center;
+  }
+
+  .contactTitle {
+    text-align: center;
+  }
+
+  .stats {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contactButton {
+    width: 100%;
+    justify-content: center;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 1.5rem;
+  }
+
+  .stats {
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+    min-width: 4ch;
+  }
+
+  .statLabel {
+    font-size: 0.875rem;
+  }
+
+  .contactTitle {
+    font-size: 2rem;
+  }
+}
+
+/* Fade Up Animation */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fadeUpVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays */
+.contactContent .fadeUp:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.contactContent .fadeUp:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+@media (max-width: 480px) {
+  .stats {
+    gap: 1.25rem;
+  }
+
+  .contactButton {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}

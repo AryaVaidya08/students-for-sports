@@ -1,66 +1,72 @@
-import Image from "next/image";
+'use client';
+
+import { useEffect } from 'react';
 import styles from "./page.module.css";
+import FAQ from "./components/faq/FAQ";
+import GetInTouchStats from "./components/get-in-touch-stats/GetInTouchStats";
 
 export default function Home() {
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.fadeUpVisible);
+        }
+      });
+    }, observerOptions);
+
+    // Use setTimeout to ensure DOM is ready
+    const timeoutId = setTimeout(() => {
+      const fadeUpElements = document.querySelectorAll(`.${styles.fadeUp}`);
+      fadeUpElements.forEach((el) => observer.observe(el));
+    }, 0);
+
+    return () => {
+      clearTimeout(timeoutId);
+      const fadeUpElements = document.querySelectorAll(`.${styles.fadeUp}`);
+      fadeUpElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className={styles.page} id="home">
+      {/* Hero Section */}
+      <section className={styles.hero}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>Play Knows No Price.</h1>
+          <p className={styles.heroSubtitle}>Join us in fostering teamwork and athleticism among students everywhere.</p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Our Mission Section */}
+      <section className={`${styles.mission} ${styles.fadeUp}`} id="mission">
+        <div className={styles.container}>
+          <div className={styles.missionContent}>
+            <div className={`${styles.missionLeftColumn} ${styles.fadeUp}`}>
+              <h2 className={styles.sectionTitle}>Our Mission</h2>
+              <div className={styles.missionText}>
+                <p>
+                  Students For Sports provides sports equipment to children who can't afford it. Through donations and local partnerships, we've given over 1,000 kids across the Tri-State Area the gear they need to play. Everyone deserves a shot. Let's pass them the ball.
+                </p>
+              </div>
+            </div>
+            <div className={`${styles.missionImage} ${styles.fadeUp}`}>
+              {/* Placeholder for mission image */}
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Contact Stats Section */}
+      <GetInTouchStats />
+
+      {/* FAQ Section */}
+      <FAQ />
     </div>
   );
 }

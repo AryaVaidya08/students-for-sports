@@ -1,0 +1,379 @@
+.page {
+  width: 100%;
+  background-color: var(--color-white);
+  padding-top: 80px;
+  scroll-padding-top: 100px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  padding: 8rem 2rem;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(41, 82, 107, 0.95) 0%, rgba(93, 135, 79, 0.9) 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(245, 241, 222, 0.1) 0%, rgba(41, 82, 107, 0.3) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-white);
+  margin: 0;
+  letter-spacing: -0.02em;
+  font-family: var(--font-primary);
+}
+
+.heroSubtitle {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-white);
+  margin: 0;
+  opacity: 0.95;
+  max-width: 1000px;
+  font-family: var(--font-primary);
+}
+
+/* Content Section */
+.content {
+  padding: 0;
+  background: var(--color-white);
+}
+
+.container {
+  max-width: 2000px;
+  margin: 0 4rem;
+  padding: 0 2rem;
+}
+
+.section {
+  margin-bottom: 0;
+  padding: 5rem 0;
+  width: 100%;
+}
+
+.sectionWhite {
+  background-color: var(--color-white);
+}
+
+.sectionGray {
+  background-color: var(--color-gray-light);
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin: 0 0 0rem 0;
+  color: var(--color-accent);
+  letter-spacing: -0.01em;
+  font-family: var(--font-primary);
+  text-align: center;
+}
+
+/* Partnership Types - Two Column Layout */
+.partnershipTypes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+}
+
+.partnerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.partnerDescription {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-dark);
+  margin: 0;
+  font-family: var(--font-primary);
+  text-align: center;
+
+}
+
+/* Esteemed Partners Section - Infinite Scrolling Carousel */
+.carouselContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.carouselWrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  transform: translateX(-33.333%);
+  animation: scrollRight 30s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.carouselSlide {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partnerLogo {
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, var(--color-gray-light), transparent);
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, var(--color-gray-light), transparent);
+}
+
+/* CTA Section */
+.ctaSection {
+  background: var(--color-accent);
+  padding: 4rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  color: var(--color-white);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin: 0 0 2rem 0;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-primary);
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--color-white);
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  font-family: var(--font-primary);
+}
+
+.ctaButton:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Want to Join Section */
+.joinSection {
+  padding: 4rem 2rem;
+  background: var(--color-white);
+}
+
+.joinSection .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.joinContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.joinTitle {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-accent);
+  letter-spacing: -0.01em;
+  font-family: var(--font-primary);
+}
+
+.joinButton {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--font-primary);
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(41, 82, 107, 0.2);
+}
+
+.joinButton:hover {
+  box-shadow: 0 6px 20px rgba(41, 82, 107, 0.3);
+}
+
+/* Fade Up Animation */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fadeUpVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure hero sections never fade up on scroll - exclude from fadeUp class */
+.hero.fadeUp,
+.heroContent.fadeUp,
+.heroTitle.fadeUp,
+.heroSubtitle.fadeUp {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Staggered delays for partner columns */
+.partnershipTypes .fadeUp:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.partnershipTypes .fadeUp:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1.5rem;
+    min-height: 40vh;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .partnershipTypes {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .partnerDescription {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .sectionTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .carouselContainer {
+    max-width: 100%;
+    padding: 1.5rem 0;
+  }
+
+  .carousel {
+    gap: 2rem;
+  }
+
+  .partnerLogo {
+    max-width: 200px;
+    max-height: 150px;
+  }
+
+  .fadeLeft,
+  .fadeRight {
+    width: 80px;
+  }
+
+  .ctaSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .joinSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .joinContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .joinButton {
+    padding: 0.75rem 1.75rem;
+    font-size: 0.9375rem;
+  }
+}

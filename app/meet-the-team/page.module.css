@@ -1,0 +1,322 @@
+.page {
+  width: 100%;
+  background-color: var(--color-white);
+  padding-top: 80px;
+  scroll-padding-top: 100px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  padding: 8rem 2rem;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(41, 82, 107, 0.95) 0%, rgba(93, 135, 79, 0.9) 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(245, 241, 222, 0.1) 0%, rgba(41, 82, 107, 0.3) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-white);
+  margin: 0;
+  letter-spacing: -0.02em;
+  font-family: var(--font-primary);
+}
+
+.heroSubtitle {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-white);
+  margin: 0;
+  opacity: 0.95;
+  max-width: 1000px;
+  font-family: var(--font-primary);
+}
+
+/* About Section */
+.aboutSection {
+  padding: 6rem 2rem 4rem;
+  background: linear-gradient(to bottom, var(--color-white) 0%, var(--color-gray-light) 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.aboutLeftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-accent);
+  letter-spacing: -0.01em;
+  font-family: var(--font-primary);
+  text-align: center;
+}
+
+.aboutText {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-dark);
+  margin: 0;
+  font-weight: 400;
+  font-family: var(--font-primary);
+  text-align: center;
+}
+
+.aboutImage {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  background: url('/images/about-us2.png') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(41, 82, 107, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-self: stretch;
+}
+
+.aboutImage:hover {
+  box-shadow: 0 25px 70px rgba(41, 82, 107, 0.3);
+}
+
+/* Content Section */
+.content {
+  padding: 4rem 2rem 6rem;
+  background: linear-gradient(to bottom, var(--color-gray-light) 0%, var(--color-white) 100%);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+}
+
+.teamCard {
+  background: var(--color-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(41, 82, 107, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teamCard:hover {
+  box-shadow: 0 12px 40px rgba(41, 82, 107, 0.2);
+}
+
+.imageContainer {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-gray-light);
+}
+
+.memberImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.memberInfo {
+  padding: 2.5rem;
+}
+
+.memberName {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 0.5rem 0;
+  font-family: var(--font-primary);
+}
+
+.memberRole {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary-highlight);
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-primary);
+}
+
+.memberBio {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-dark);
+  margin: 0;
+  font-family: var(--font-primary);
+}
+
+/* Want to Join Section */
+.joinSection {
+  padding: 2rem 2rem;
+  padding-bottom: 6rem !important;
+  background: var(--color-white);
+}
+
+.joinContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.joinTitle {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-accent);
+  letter-spacing: -0.01em;
+  font-family: var(--font-primary);
+}
+
+.joinButton {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--font-primary);
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(41, 82, 107, 0.2);
+}
+
+.joinButton:hover {
+  box-shadow: 0 6px 20px rgba(41, 82, 107, 0.3);
+}
+
+/* Fade Up Animation */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fadeUpVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure hero sections never fade up on scroll - exclude from fadeUp class */
+.hero.fadeUp,
+.heroContent.fadeUp,
+.heroTitle.fadeUp,
+.heroSubtitle.fadeUp {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Staggered delays for team cards */
+.teamGrid .fadeUp:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.teamGrid .fadeUp:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.teamGrid .fadeUp:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1.5rem;
+    min-height: 40vh;
+  }
+
+  .aboutSection {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .aboutContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .aboutLeftColumn {
+    gap: 1.5rem;
+  }
+
+  .aboutImage {
+    min-height: 250px;
+  }
+
+  .content {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .memberInfo {
+    padding: 2rem;
+  }
+
+  .joinSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .joinContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .joinButton {
+    padding: 0.75rem 1.75rem;
+    font-size: 0.9375rem;
+  }
+}
