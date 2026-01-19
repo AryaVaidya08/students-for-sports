@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import styles from "./page.module.css";
-import { Analytics } from "@vercel/analytics/next"
+
 import FAQ from "./components/faq/FAQ";
 import GetInTouchStats from "./components/get-in-touch-stats/GetInTouchStats";
 
