@@ -125,6 +125,7 @@
   position: relative;
   overflow: hidden;
   padding: 2rem 0;
+  background-color: var(--color-gray-light);
 }
 
 .carouselWrapper {
@@ -170,19 +171,33 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 50px;
+  width: 80px;
   z-index: 2;
   pointer-events: none;
 }
 
 .fadeLeft {
   left: 0;
-  background: linear-gradient(to right, var(--color-gray-light), transparent);
+  background: linear-gradient(
+    to right,
+    var(--color-gray-light) 0%,
+    rgba(248, 249, 250, 0.85) 25%,
+    rgba(248, 249, 250, 0.5) 50%,
+    rgba(248, 249, 250, 0.2) 75%,
+    transparent 100%
+  );
 }
 
 .fadeRight {
   right: 0;
-  background: linear-gradient(to left, var(--color-gray-light), transparent);
+  background: linear-gradient(
+    to left,
+    var(--color-gray-light) 0%,
+    rgba(248, 249, 250, 0.85) 25%,
+    rgba(248, 249, 250, 0.5) 50%,
+    rgba(248, 249, 250, 0.2) 75%,
+    transparent 100%
+  );
 }
 
 /* CTA Section */
@@ -341,10 +356,28 @@
   .carouselContainer {
     max-width: 100%;
     padding: 1.5rem 0;
+    overflow: visible;
+  }
+
+  .carouselWrapper {
+    overflow: visible;
   }
 
   .carousel {
     gap: 2rem;
+    animation: none !important;
+    transform: none !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .carouselSlide {
+    flex: 0 0 auto;
+  }
+
+  /* Hide duplicate images, show only first 3 unique partners */
+  .carouselSlide:nth-child(n+4) {
+    display: none;
   }
 
   .partnerLogo {
@@ -354,7 +387,7 @@
 
   .fadeLeft,
   .fadeRight {
-    width: 25px;
+    display: none;
   }
 
   .ctaSection {

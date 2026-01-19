@@ -223,6 +223,16 @@
     gap: 3rem;
   }
 
+  .sectionContentReversed .sectionImage {
+    grid-column: 1;
+    order: 2;
+  }
+
+  .sectionContentReversed .sectionLeftColumn {
+    grid-column: 1;
+    order: 1;
+  }
+
   .sectionTitle {
     text-align: center;
   }
